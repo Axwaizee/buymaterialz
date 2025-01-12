@@ -5,11 +5,18 @@
   "dependencies": {
     "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.2.0",
+    "clsx": "^2.1.1",
     "cra-template": "1.2.0",
+    "embla-carousel": "^8.5.2",
+    "embla-carousel-autoplay": "^8.5.2",
+    "embla-carousel-class-names": "^8.5.2",
+    "embla-carousel-react": "^8.5.2",
+    "framer-motion": "^11.17.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.1.1",
-    "react-scripts": "5.0.1"
+    "react-scripts": "5.0.1",
+    "tailwind-merge": "^2.6.0"
   },
   "scripts": {
     "start": "react-scripts start",
