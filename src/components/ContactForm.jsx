@@ -25,8 +25,8 @@ export default function ContactForm() {
 		setOverlayColor({ x, y });
 	};
 	return (
-		<ScrollElement viewport={{ amount: 0.3, margin: "0px 0px 0px 0px" }}>
-			<div className="relative lg:w-4/5 sm:w-full mx-auto  bg-black lg:p-8 p-4  rounded-md">
+		<ScrollElement viewport={{ amount: 0.4, margin: "0px 0px 0px 0px" }}>
+			<div className="relative lg:w-4/5 sm:w-full mx-auto  bg-black lg:p-8 p-4 my-20 rounded-md">
 				<div
 					onMouseMove={handleMouemove}
 					onMouseEnter={() => setIsHovered(true)}
