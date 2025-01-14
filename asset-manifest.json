@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/buymaterialz/static/css/main.fb532045.css",
-    "main.js": "/buymaterialz/static/js/main.e4a0d137.js",
-    "index.html": "/buymaterialz/index.html",
-    "main.fb532045.css.map": "/buymaterialz/static/css/main.fb532045.css.map",
-    "main.e4a0d137.js.map": "/buymaterialz/static/js/main.e4a0d137.js.map"
+    "main.css": "/static/css/main.fb532045.css",
+    "main.js": "/static/js/main.e9e90a79.js",
+    "index.html": "/index.html",
+    "main.fb532045.css.map": "/static/css/main.fb532045.css.map",
+    "main.e9e90a79.js.map": "/static/js/main.e9e90a79.js.map"
   },
   "entrypoints": [
     "static/css/main.fb532045.css",
-    "static/js/main.e4a0d137.js"
+    "static/js/main.e9e90a79.js"
   ]
 }
