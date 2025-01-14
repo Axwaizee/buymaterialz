@@ -1,5 +1,5 @@
 {
-  "homepage": "https://axwaizee.github.io/buymaterialz",
+  "homepage": "https://buymaterialz.com",
   "name": "buymaterialz",
   "version": "0.1.0",
   "private": true,
@@ -19,6 +19,7 @@
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.1.1",
     "react-scripts": "5.0.1",
+    "serve": "^14.2.4",
     "tailwind-merge": "^2.6.0"
   },
   "scripts": {
