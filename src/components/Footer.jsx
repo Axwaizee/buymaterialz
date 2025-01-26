@@ -71,11 +71,11 @@ const Footer = () => {
 					<div className="md:flex justify-between w-full">
 						<div>
 							<h1 className="md:text-4xl text-2xl font-semibold">
-								Let&lsquo;s do great work together
+								Be the first to know!
 							</h1>
 							<div className="pt-2 pb-6 md:w-99  ">
 								<p className="md:text-2xl text-xl  py-4">
-									Sign up for our newsletter*
+								Get updates on the newest arrivals and special promotions.
 								</p>
 								<div className=" hover-button relative bg-black flex justify-between items-center border-2 overflow-hidden  border-black rounded-full  text-white hover:text-black md:text-2xl">
 									<form
@@ -87,7 +87,7 @@ const Footer = () => {
 										<input
 											type="email"
 											name="newsletter_email"
-											className="border-none bg-transparent  py-3 px-6  col-span-5"
+											className="border-none bg-transparent text-white-theme py-3 px-6  col-span-5"
 											placeholder="Your Email * "
 										/>{" "}
 										<button

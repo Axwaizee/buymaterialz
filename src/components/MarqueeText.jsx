@@ -3,7 +3,7 @@ import ScrollBaseAnimation from "./text-marquee";
 function MarqueeText({ text1 = "", text2 = "" }) {
 	return (
 		<>
-			<div className="h-fit my-10 grid place-content-center text-white">
+			<div className="h-fit my-10 grid place-content-center text-black">
 				<ScrollBaseAnimation
 					delay={500}
 					baseVelocity={-3}

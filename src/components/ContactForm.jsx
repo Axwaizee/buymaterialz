@@ -1,173 +1,170 @@
-import ScrollElement from "./scroll-element";
-import { cn } from "./utils";
-import React, { useRef, useState } from "react";
-export default function ContactForm() {
-	const boxWrapper = useRef(null);
-	const [isHovered, setIsHovered] = useState(false);
-	const [mousePosition, setMousePosition] = React.useState({
-		x: null,
-		y: null,
-	});
-	React.useEffect(() => {
-		const updateMousePosition = (ev) => {
-			setMousePosition({ x: ev.clientX, y: ev.clientY });
-		};
-		window.addEventListener("mousemove", updateMousePosition);
-		return () => {
-			window.removeEventListener("mousemove", updateMousePosition);
-		};
-	}, []);
-	const [overlayColor, setOverlayColor] = useState({ x: 0, y: 0 });
-	const handleMouemove = ({ currentTarget, clientX, clientY }) => {
-		let { left, top } = currentTarget.getBoundingClientRect();
-		const x = clientX - left;
-		const y = clientY - top;
-		setOverlayColor({ x, y });
-	};
-	return (
-		<ScrollElement viewport={{ amount: 0.4, margin: "0px 0px 0px 0px" }}>
-			<div className="relative lg:w-4/5 sm:w-full mx-auto  bg-black lg:p-8 p-4 my-20 rounded-md">
-				<div
-					onMouseMove={handleMouemove}
-					onMouseEnter={() => setIsHovered(true)}
-					onMouseLeave={() => setIsHovered(false)}
-					ref={boxWrapper}
-					className={cn(
-						"group relative rounded-lg w-full  p-[2px] bg-[#eeeeee15] overflow-hidden  mx-auto"
-					)}
-				>
-					{isHovered && (
-						<div
-							className="pointer-events-none absolute opacity-0 z-50 rounded-xl w-full h-full group-hover:opacity-100  transition duration-300 "
-							style={{
-								background: `
-            radial-gradient(
-              250px circle at ${overlayColor.x}px ${overlayColor.y}px,
-              rgba(255, 255, 255, 0.068),
-              transparent 80%
-            )
-          `,
-							}}
-						/>
-					)}
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
-					<div
-						className="absolute opacity-0 group-hover:opacity-100 z-10 inset-0 bg-fixed rounded-lg"
-						style={{
-							background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, #ffffff76 0%,transparent 20%,transparent) fixed `,
-						}}
-					></div>
-					<div className="relative w-full z-10  lg:px-8 px-4 py-6 rounded-lg text-white bg-cover bg-black h-full mx-auto [background:linear-gradient(45deg,#000000,#040404,#080808)_padding-box,conic-gradient(from_var(--border-angle),theme(colors.slate.600/.48)_80%,_theme(colors.blue.500)_86%,_theme(colors.blue.300)_90%,_theme(colors.blue.500)_94%,_theme(colors.slate.600/.48))_border-box] rounded-2xl border border-transparent animate-border">
-						<>
-							<h1 className="text-3xl text-center pt-2 font-medium tracking-tight ">
-								Contact Form
-							</h1>
-							<form className="space-y-6 my-6">
-                                {/* Name */}
-                                <div className="w-full">
-                                    <label htmlFor="name" className="block text-lg font-medium">
-                                        Name
-                                    </label>
-                                    <input
-                                        type="text"
-                                        name="name"
-                                        id="name"
-                                        className="bg-gray-900 w-full outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 rounded-md p-3 border border-gray-700 text-white"
-                                        required
-                                    />
-                                </div>
+const ContactForm = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    identity: '',
+    requirements: '',
+    message: '',
+  });
 
-                                {/* Email */}
-                                <div className="w-full">
-                                    <label htmlFor="email" className="block text-lg font-medium">
-                                        Email
-                                    </label>
-                                    <input
-                                        type="email"
-                                        name="email"
-                                        id="email"
-                                        className="bg-gray-900 w-full outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 rounded-md p-3 border border-gray-700 text-white"
-                                        required
-                                    />
-                                </div>
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
 
-                                {/* Phone Number */}
-                                <div className="w-full">
-                                    <label htmlFor="phone" className="block text-lg font-medium">
-                                        Phone Number
-                                    </label>
-                                    <input
-                                        type="tel"
-                                        name="phone"
-                                        id="phone"
-                                        className="bg-gray-900 w-full outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 rounded-md p-3 border border-gray-700 text-white"
-                                        required
-                                    />
-                                </div>
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
 
-                                {/* Identity */}
-                                <div className="w-full">
-                                    <label htmlFor="identity" className="block text-lg font-medium">
-                                        Identity
-                                    </label>
-                                    <select
-                                        id="identity"
-                                        className="bg-gray-900 w-full outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 rounded-md p-3 border border-gray-700 text-white"
-                                        required
-                                    >
-                                        <option value="" className="hidden" disabled selected></option>
-                                        <option value="Dealer">Dealer</option>
-                                        <option value="Distributor">Distributor</option>
-                                        <option value="Contractor">Contractor</option>
-                                        <option value="Individual">Individual</option>
-                                        <option value="Other">Other</option>
-                                    </select>
-                                </div>
 
-                                {/* Requirements */}
-                                <div className="w-full">
-                                    <label htmlFor="requirements" className="block text-lg font-medium">
-                                        Requirements
-                                    </label>
-                                    <select
-                                        id="requirements"
-                                        className="bg-gray-900 w-full outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 rounded-md p-3 border border-gray-700 text-white"
-                                    >
-                                        <option value="" className="hidden" disabled selected></option>
-                                        <option value="Cement">Cement</option>
-                                        <option value="Other">Other</option>
-                                    </select>
-                                </div>
+  };
 
-                                {/* Message */}
-                                <div className="w-full">
-                                    <label htmlFor="message" className="block text-lg font-medium">
-                                        Message
-                                    </label>
-                                    <textarea
-                                        id="message"
-                                        name="message"
-                                        rows="4"
-                                        className="bg-gray-900 w-full outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 rounded-md p-3 border border-gray-700 text-white"
-                                        placeholder="Write your message here..."
-                                        required
-                                    ></textarea>
-                                </div>
+  return (
+    <div className="flex justify-center items-center min-h-screen bg-white-theme w-full p-4">
+      <motion.form
+        onSubmit={handleSubmit}
+        className="w-full  p-6 shadow-xl rounded-lg space-y-6"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        <h2 className="text-3xl font-semibold text-center text-gray-800 mb-4">Contact Us</h2>
 
-                                {/* Submit Button */}
-                                <div className="w-full text-center">
-                                    <button
-                                        type="submit"
-                                        className="bg-white hover:bg-slate-200 focus:outline-none focus:ring-4 focus:bg-slate-200 text-black font-semibold py-3 px-6 rounded-md shadow-lg"
-                                    >
-                                        Submit
-                                    </button>
-                                </div>
-                            </form>
-						</>
-					</div>
-				</div>
-			</div>
-		</ScrollElement>
-	);
-}
+        <div className="space-y-4">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <label htmlFor="name" className="block text-gray-600 font-medium">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              className="w-full p-3 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Enter your name"
+              required
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <label htmlFor="email" className="block text-gray-600 font-medium">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              className="w-full p-3 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Enter your email"
+              required
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <label htmlFor="phone" className="block text-gray-600 font-medium">Phone Number</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              className="w-full p-3 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Enter your phone number"
+              required
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
+            <label htmlFor="identity" className="block text-gray-600 font-medium">Identity</label>
+            <select
+              id="identity"
+              name="identity"
+              value={formData.identity}
+              onChange={handleChange}
+              className="w-full p-3 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            >
+              <option value="" disabled>Select Identity</option>
+              <option value="Dealer">Dealer</option>
+              <option value="Distributor">Distributor</option>
+              <option value="Contractor">Contractor</option>
+              <option value="Individual">Individual</option>
+              <option value="Other">Other</option>
+            </select>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
+            <label htmlFor="requirements" className="block text-gray-600 font-medium">Requirements</label>
+            <select
+              id="requirements"
+              name="requirements"
+              value={formData.requirements}
+              onChange={handleChange}
+              className="w-full p-3 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            >
+              <option value="" disabled>Select Requirements</option>
+              <option value="Cement">Cement</option>
+              <option value="Other">Other</option>
+            </select>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+          >
+            <label htmlFor="message" className="block text-gray-600 font-medium">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              className="w-full p-3 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Enter your message"
+              rows="4"
+              required
+            ></textarea>
+          </motion.div>
+        </div>
+
+        <motion.button
+          type="submit"
+          className="w-full p-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none transition duration-300"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          Submit
+        </motion.button>
+      </motion.form>
+    </div>
+  );
+};
+
+export default ContactForm;

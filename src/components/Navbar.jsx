@@ -32,7 +32,7 @@ export default function Navbar() {
 
 	return (
 		<div className="">
-			<header className="inset-x-0 top-0 text-white ">
+			<header className="inset-x-0 top-0 text-black ">
 				<nav
 					aria-label="Global"
 					className="flex items-center justify-between p-6 lg:px-8"
@@ -44,7 +44,7 @@ export default function Navbar() {
 						<button
 							type="button"
 							onClick={() => setMobileMenuOpen(true)}
-							className="-m-2.5 inline-flex items-center justify-center text-gray rounded-md p-2.5"
+							className="-m-2.5 inline-flex items-center justify-center text-black rounded-md p-2.5"
 						>
 							<span className="sr-only">Open main menu</span>
 							<Bars3Icon aria-hidden="true" className="size-6" />
@@ -69,13 +69,13 @@ export default function Navbar() {
 					className="lg:hidden"
 				>
 					<div className="fixed inset-0 z-50" />
-					<DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-black px-6 py-6 sm:max-w-sm sm:ring-1 ">
+					<DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white-theme px-6 py-6 sm:max-w-sm sm:ring-1 ">
 						<div className="flex items-center  justify-between">
 							{renderHeader}
 							<button
 								type="button"
 								onClick={() => setMobileMenuOpen(false)}
-								className="-m-2.5 text-white rounded-md p-2.5 "
+								className="-m-2.5 text-black rounded-md p-2.5 "
 							>
 								<span className="sr-only">Close menu</span>
 								<XMarkIcon
@@ -96,7 +96,7 @@ export default function Navbar() {
 										>
 											<Link
 												to={item.path}
-												className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-300 hover:bg-gray-900"
+												className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-theme-white hover:bg-gray-300"
 											>
 												{item.name}
 											</Link>
