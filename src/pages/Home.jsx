@@ -9,10 +9,10 @@ export default function Home() {
 		<>
 			<AutoStartSlider />
 			<AboutContactUs />
-			<MarqueeText
+			{/* <MarqueeText
 				text1="Buy Materials at Reasonable Price."
 				text2="All types of Raw Materials available."
-			/>
+			/> */}
 		</>
 	);
 }

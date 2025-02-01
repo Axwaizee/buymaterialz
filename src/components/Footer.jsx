@@ -2,6 +2,7 @@
 import React, { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
+import { FaLinkedin, FaXTwitter, FaInstagram, FaFacebook } from "react-icons/fa6";
 // const pathArr = [
 //   'M55.7447 0H15.3191L0 45.5836H18.2979L4.25532 81.7065H16.5957L5.95745 126L34.4681 82.9966L45.9574 126H120V0H104.681L104.255 110.519H58.2979L45.9574 64.5051H28.0851L42.9787 39.1331L61.7021 106.648H99.5745V0H80V94.6075H76.1702L55.7447 0Z',
 //   'M167.002 107.746C175.137 107.746 182.109 104.758 186.426 97.4531H207.178C200.371 114.719 186.592 125.676 167.666 125.676C143.594 125.676 124.834 106.916 124.834 82.8438C124.834 59.6016 143.262 39.5137 166.836 39.5137C192.402 39.5137 210 59.9336 210 84.6699C210 85.998 209.834 87.3262 209.834 88.6543H144.424C145.752 101.271 154.717 107.746 167.002 107.746ZM166.836 57.1113C156.543 57.1113 147.744 63.4199 145.088 73.5469H189.414C186.094 62.4238 178.291 57.1113 166.836 57.1113Z',
@@ -75,7 +76,8 @@ const Footer = () => {
 							</h1>
 							<div className="pt-2 pb-6 md:w-99  ">
 								<p className="md:text-2xl text-xl  py-4">
-								Get updates on the newest arrivals and special promotions.
+									Get updates on the newest arrivals and
+									special promotions.
 								</p>
 								<div className=" hover-button relative bg-black flex justify-between items-center border-2 overflow-hidden  border-black rounded-full  text-white hover:text-black md:text-2xl">
 									<form
@@ -114,7 +116,52 @@ const Footer = () => {
 								</div>
 							</div>
 						</div>
-						<div className="flex gap-10">
+					</div>
+					<div className="border-y-2 md:py-4 border-gray-200 py-7">
+						<div className="flex gap-10 justify-between p-5">
+							<div>
+								<p className="text-2xl pb-2 text-black font-semibold">
+									SOCIAL
+								</p>
+								<ul className="flex gap-2">
+									<li className="text-2xl font-medium">
+										<a
+											href="https://www.linkedin.com/in/bishal-sarkar-00b312197/"
+											target="_blank"
+											className="underline"
+										>
+											<FaLinkedin />
+										</a>
+									</li>
+									<li className="text-2xl font-medium">
+										<a
+											href="https://x.com/axwaizee"
+											target="_blank"
+											className="underline"
+										>
+											<FaXTwitter />
+										</a>
+									</li>
+									<li className="text-2xl font-medium">
+										<a
+											href="https://www.instagram.com/_bishalsark/"
+											target="_blank"
+											className="underline"
+										>
+											<FaInstagram />
+										</a>
+									</li>
+									<li className="text-2xl font-medium">
+										<a
+											href="https://www.facebook.com/_bishalsark"
+											target="_blank"
+											className="underline"
+										>
+											<FaFacebook />
+										</a>
+									</li>
+								</ul>
+							</div>
 							<ul>
 								<li className="text-2xl pb-2 text-black font-semibold">
 									SITEMAP
@@ -139,74 +186,7 @@ const Footer = () => {
 									<Link href="/contact-us">Contact</Link>
 								</li> */}
 							</ul>
-							<ul>
-								<li className="text-2xl pb-2 text-black font-semibold">
-									SOCIAL
-								</li>
-								<li className="text-xl font-medium">
-									<a
-										href="https://www.linkedin.com/in/bishal-sarkar-00b312197/"
-										target="_blank"
-										className="underline"
-									>
-										LinkedIn
-									</a>
-								</li>
-								<li className="text-xl font-medium">
-									<a
-										href="https://x.com/axwaizee"
-										target="_blank"
-										className="underline"
-									>
-										Twitter
-									</a>
-								</li>
-								<li className="text-xl font-medium">
-									<a
-										href="https://www.instagram.com/_bishalsark/"
-										target="_blank"
-										className="underline"
-									>
-										Instagram
-									</a>
-								</li>
-								<li className="text-xl font-medium">
-									<a
-										href="https://www.facebook.com/_bishalsark"
-										target="_blank"
-										className="underline"
-									>
-										Facebook
-									</a>
-								</li>
-							</ul>
 						</div>
-					</div>
-					<div className="border-y-2 md:py-4 border-gray-200">
-						<motion.svg
-							width="776"
-							ref={ref}
-							height="137"
-							viewBox="0 0 776 137"
-							fill="none"
-							className="sm:h-fit h-20 md:px-8 px-2 mt-5 footer-logo w-full flex"
-							xmlns="http://www.w3.org/2000/svg"
-							initial="hidden"
-							animate={isInView ? "visible" : "hidden"}
-						>
-							{pathArr.map((path, index) => {
-								return (
-									<>
-										<motion.path
-											custom={index}
-											variants={variants}
-											d={path}
-											fill="#00a2ff"
-										/>
-									</>
-								);
-							})}
-						</motion.svg>
 					</div>
 					<div className="flex md:flex-row flex-col-reverse gap-3 justify-between py-2">
 						<span className="font-medium">
