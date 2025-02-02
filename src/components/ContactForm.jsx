@@ -157,8 +157,6 @@ const ContactForm = () => {
         <motion.button
           type="submit"
           className="w-full p-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none transition duration-300"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
         >
           Submit
         </motion.button>

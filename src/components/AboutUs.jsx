@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function AboutUs(params) {
   return (
-    <div className="bg-white-theme py-16 px-6">
+    <div className="bg-white-theme my-16 px-6">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl font-semibold text-gray-800 mb-6">About Us</h2>
         <p className="text-lg text-gray-600 mb-8">
