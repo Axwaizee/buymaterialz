@@ -144,7 +144,7 @@ const Footer = () => {
 									</li>
 									<li className="text-2xl font-medium">
 										<a
-											href="https://www.instagram.com/_bishalsark/"
+											href="https://www.instagram.com/buymaterialz"
 											target="_blank"
 											className="underline"
 										>
@@ -153,7 +153,7 @@ const Footer = () => {
 									</li>
 									<li className="text-2xl font-medium">
 										<a
-											href="https://www.facebook.com/_bishalsark"
+											href="https://www.facebook.com/buy.materialz/"
 											target="_blank"
 											className="underline"
 										>
@@ -204,9 +204,9 @@ const Footer = () => {
 							Email:
 							<a
 								className="underline ml-2 "
-								href="mailto:sarkarbishal@gmail.com"
+								href="mailto:buymaterialz@gmail.com"
 							>
-								sarkarbishal@gmail.com
+								buymaterialz@gmail.com
 							</a>
 						</span>
 						<span className="font-medium">
