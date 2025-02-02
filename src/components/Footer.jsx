@@ -144,7 +144,7 @@ const Footer = () => {
 									</li>
 									<li className="text-2xl font-medium">
 										<a
-											href="https://www.instagram.com/buymaterialz"
+											href="https://www.instagram.com/buymaterialz/"
 											target="_blank"
 											className="underline"
 										>
