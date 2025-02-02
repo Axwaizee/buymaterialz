@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function AboutUs(params) {
+export default function AboutUs() {
   return (
     <div className="bg-white-theme my-16 px-6">
       <div className="max-w-6xl mx-auto text-center">

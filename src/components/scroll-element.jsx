@@ -17,7 +17,7 @@ const generateVariants = (direction) => {
     },
   };
 };
-const defaultViewport = { amount: 0.3, margin: '0px 0px -200px 0px' };
+const defaultViewport = { amount: 0.1, margin: '0px 0px -200px 0px' };
 function ScrollElement({
   children,
   className,
