@@ -167,24 +167,26 @@ const Footer = () => {
 									SITEMAP
 								</li>
 								<li className="text-xl font-medium">
-									<Link href="/">Home</Link>
-								</li>
-								{/* <li className="text-xl font-medium">
-									<Link href="/about">About us</Link>
+									<Link to="/">Home</Link>
 								</li>
 								<li className="text-xl font-medium">
-									<Link href="/services">Our Services</Link>
+									<a href="/#AboutUs">About us</a>
+								</li>
+								<li className="text-xl font-medium">
+									<a href="/#ContactUs">Contact</a>
+								</li>
+								{/* 
+								<li className="text-xl font-medium">
+									<Link to="/services">Our Services</Link>
 								</li>
 
 								<li className="text-xl font-medium">
-									<Link href="/projects">Projects</Link>
+									<Link to="/projects">Projects</Link>
 								</li>
 								<li className="text-xl font-medium">
-									<Link href="/blogs">Blogs</Link>
+									<Link to="/blogs">Blogs</Link>
 								</li>
-								<li className="text-xl font-medium">
-									<Link href="/contact-us">Contact</Link>
-								</li> */}
+								 */}
 							</ul>
 						</div>
 					</div>

@@ -7,6 +7,8 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
 	{ name: "Home", path: "/" },
+	{ name: "About Us", path: "/#AboutUs" },
+	{ name: "Contact", path: "/#ContactUs" },
 ];
 
 const renderHeader = (
@@ -53,12 +55,12 @@ export default function Navbar() {
 					<ul className="hidden lg:flex lg:gap-x-12">
 						{navigation.map((item, idx) => (
 							<li key={idx}>
-								<Link
-									to={item.path}
+								<a
+									href={item.path}
 									className="hover:underline text-sm/6 font-semibold"
 								>
 									{item.name}
-								</Link>
+								</a>
 							</li>
 						))}
 					</ul>

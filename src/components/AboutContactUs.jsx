@@ -7,9 +7,11 @@ export default function AboutContactUs() {
 	return (
 		<>
 			{/* About Us Section */}
+			<div id="AboutUs">
 				<ScrollElement direction="center">
 					<AboutUs />
 				</ScrollElement>
+			</div>
 			{/* Contact Form Section */}
 			<div
 				id="ContactUs"
